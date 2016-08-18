@@ -1,23 +1,25 @@
 ---
-layout: default
+layout: page
 ---
+<div class="index">
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="vertical-center-child index-container">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <h1 class="index-title">Halton Xu</h1>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <div class="index-contacts">
+      <a class="index-contact" href="https://github.com/ihalton" target="_blank">
+        {% include svg_github.html %}
+      </a>
+    </div>
+
+
+  </div>
+
 
 </div>
+
+<!-- menu -->
+{% include menu.html %}

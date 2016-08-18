@@ -1,15 +1,59 @@
 ---
-layout: default
+layout: page
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+{% assign type = 'english' %}
+{% assign post_date = '%B %d, %Y' %}
+{% assign previous = 'previous' %}
+{% assign next = 'next' %}
+{% if page.tags contains 'chinese' %}
+{% assign type = 'chinese' %}
+{% assign post_date = '%Y年 %-m月 %-d日' %}
+{% assign previous = '上一篇' %}
+{% assign next = '下一篇' %}
+{% endif %}
+<div class="footer-clear post {{ type }}">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+  <!-- post header -->
+  <div class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-date">{{ page.date | date: post_date }}</p>
+  </div>
 
-  <div class="post-content" itemprop="articleBody">
+  <!-- post content -->
+  <div class="post-content">
     {{ content }}
   </div>
 
-</article>
+  <!-- post navigator -->
+  <div class="post-nav">
+
+    {% if page.previous and page.next %}
+    <span class="p-n-sep">
+      {% include svg_feather.html %}
+    </span>
+    {% endif %}
+
+    {% if page.previous %}
+    <a class="p-n-previous"href="{{ page.previous.url }}">{{ previous }}</a>
+    {% endif %}
+
+    {% if page.next %}
+    <a class="p-n-next" href="{{ page.next.url }}">{{ next }}</a>
+    {% endif %}
+
+  </div>
+
+  <!-- disqus comment system -->
+  {% if site.disqus_shortname != '' %}
+  <div class="post-comment">
+    {% include disqus.html %}
+  </div>
+  {% endif %}
+
+  <!-- footer -->
+  {% include footer.html %}
+
+</div>
+
+<!-- menu -->
+{% include menu.html %}
