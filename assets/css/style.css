@@ -428,21 +428,21 @@ figure {
 .stack {
   text-align: left;
   margin: 30px;
-};
+}
 
 .bio-title {
   font-size: 30px;
   font-weight: 100;
   color: #8edc9d;
-};
+}
 
 .bio-content {
   width: 500px;
   margin: auto;
 
-};
+}
 
 .bio-content p {
-  text-align: left;
-  margin-left: 100px;
-};
+  text-align: center;
+  /* margin-left: 100px; */
+}
