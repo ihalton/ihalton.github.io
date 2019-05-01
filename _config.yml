@@ -3,7 +3,7 @@ title: Halton Xu
 email: halton.xu@gmail.com
 descriptio: coder
 #baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.halton.cc" # the base hostname & protocol for your site
+url: "http://www.halton.cc" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
