@@ -1,3 +1,9 @@
+---
+layout: page
+title: About | Halton Xu 
+permalink: /about-me/
+---
+
 ### 关于我
 
 
